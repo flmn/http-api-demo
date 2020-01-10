@@ -1,18 +1,46 @@
 plugins {
-	id 'org.springframework.boot' version '2.2.2.RELEASE'
-	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
-	id 'java'
-	id 'idea'
+    id 'org.springframework.boot' version '2.2.2.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+    id 'java'
+    id 'idea'
 }
 
 group = 'tech.jitao'
-version = '0.0.1-SNAPSHOT'
+version = '0.0.1'
 sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+gradle.projectsEvaluated {
+    tasks.withType(JavaCompile) {
+        options.compilerArgs << "-Xlint:all"
+    }
+}
+
+idea.project {
+    jdkName = '1.8'
+    languageLevel = '1.8'
+}
+
+wrapper {
+    gradleVersion = '6.0.1'
+}
+
+springBoot {
+    buildInfo()
+}
+
+bootJar {
+    launchScript()
+}
 
 repositories {
-	mavenCentral()
+    mavenCentral()
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation(
+            'org.springframework.boot:spring-boot-starter-web',
+            "com.google.guava:guava:28.2-jre",
+            "org.apache.commons:commons-lang3:3.9",
+    )
 }

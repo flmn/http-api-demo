@@ -6,12 +6,13 @@ import java.time.LocalDateTime;
 
 public class User {
     private Long id;
-    private String loginName;
+    private String username;
     private String password;
     private String screenName;
+    private String avatar;
     private LocalDate birthday;
-    private Integer isAdmin;
     private BigDecimal balance;
+    private Integer isAdmin;
     private Integer status;
     private LocalDateTime lastLoginTime;
     private LocalDateTime createTime;
@@ -25,12 +26,12 @@ public class User {
         this.id = id;
     }
 
-    public String getLoginName() {
-        return loginName;
+    public String getUsername() {
+        return username;
     }
 
-    public void setLoginName(String loginName) {
-        this.loginName = loginName;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -49,6 +50,14 @@ public class User {
         this.screenName = screenName;
     }
 
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
+
     public LocalDate getBirthday() {
         return birthday;
     }
@@ -57,20 +66,20 @@ public class User {
         this.birthday = birthday;
     }
 
-    public Integer getIsAdmin() {
-        return isAdmin;
-    }
-
-    public void setIsAdmin(Integer isAdmin) {
-        this.isAdmin = isAdmin;
-    }
-
     public BigDecimal getBalance() {
         return balance;
     }
 
     public void setBalance(BigDecimal balance) {
         this.balance = balance;
+    }
+
+    public Integer getIsAdmin() {
+        return isAdmin;
+    }
+
+    public void setIsAdmin(Integer isAdmin) {
+        this.isAdmin = isAdmin;
     }
 
     public Integer getStatus() {

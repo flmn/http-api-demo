@@ -1,0 +1,24 @@
+POST http://localhost:8080/web/login
+Content-Type: application/json
+
+{
+  "username": "tang",
+  "password":"P@ssW0rd"
+}
+
+###
+
+POST http://localhost:8080/web/login
+Content-Type: application/json
+
+{
+  "username": "tang"
+}
+
+###
+
+POST http://localhost:8080/web/logout
+Content-Type: application/json
+X-Access-Token: D8d8lKFtXdQ15Y5VoZm2UHQI8UZGGk17kArOFR7I
+
+###

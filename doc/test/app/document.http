@@ -1,0 +1,24 @@
+POST http://localhost:8080/app/document/get-document
+Content-Type: application/json
+
+{
+  "id": "1"
+}
+
+###
+
+POST http://localhost:8080/app/document/get-document
+Content-Type: application/json
+
+{
+  "id": "2"
+}
+
+###
+
+POST http://localhost:8080/app/document/list-documents
+Content-Type: application/json
+
+{}
+
+###

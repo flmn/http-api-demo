@@ -1,0 +1,9 @@
+POST http://localhost:8080/web/document/list-documents
+Content-Type: application/json
+
+{
+  "currentPage": 1,
+  "pageSize": 10
+}
+
+###
