@@ -4,6 +4,8 @@
 
 ## 运行方法
 
+运行如下命令，编译运行 demo。
+
 ```bash
 git clone https://github.com/flmn/http-api-demo.git
 cd http-api-demo
@@ -11,3 +13,12 @@ cd http-api-demo
 build/libs/http-api-demo-0.0.1.jar
 ```
 
+## 开发说明
+
+在项目目录运行如下命令，生成 Idea 工程文件。
+
+```bash
+./gradlew idea
+```
+
+用 Idea 打开 **http-api-demo.ipr** 工程文件。
