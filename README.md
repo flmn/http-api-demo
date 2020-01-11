@@ -22,3 +22,13 @@ build/libs/http-api-demo-0.0.1.jar
 ```
 
 用 Idea 打开 **http-api-demo.ipr** 工程文件。
+
+## 更多信息
+
+* 请关注公众号: **architect-xnq**
+
+![公众号](./doc/img/mp-qr-code.jpg)
+
+* 或者添加私人微信: **pisystem**
+
+![私人微信](./doc/img/pisystem-qr-code.jpg)
