@@ -9,7 +9,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class UserDto {
-    private String id;
+    private Long id;
     private String name;
     private String avatar;
 
@@ -36,7 +36,7 @@ public class UserDto {
     }
 
     public UserDto(User user, boolean detail) {
-        id = String.valueOf(user.getId());
+        id = user.getId();
         name = user.getScreenName();
         avatar = user.getAvatar();
 
@@ -52,11 +52,11 @@ public class UserDto {
         }
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

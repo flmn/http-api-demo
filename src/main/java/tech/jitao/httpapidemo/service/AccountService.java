@@ -55,7 +55,7 @@ public class AccountService {
         Optional<User> opt = accountRepository.findById(id);
         if (!opt.isPresent()) {
             UserDto dto = new UserDto();
-            dto.setId(String.valueOf(id));
+            dto.setId(id);
             dto.setName("已重置");
             dto.setAvatar(profileConfig.getCdnUrl(DEFAULT_AVATAR));
 

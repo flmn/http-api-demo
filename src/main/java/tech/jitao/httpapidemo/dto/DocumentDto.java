@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 public class DocumentDto {
-    private String id;
+    private Long id;
     private UserDto owner;
     private String title;
     private String content;
@@ -21,7 +21,7 @@ public class DocumentDto {
     }
 
     public DocumentDto(Document document, boolean detail) {
-        id = String.valueOf(document.getId());
+        id = document.getId();
         title = document.getTitle();
         price = document.getPrice();
         status = document.getStatus();
@@ -32,11 +32,11 @@ public class DocumentDto {
         }
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
