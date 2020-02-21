@@ -25,10 +25,10 @@ build/libs/http-api-demo-0.0.1.jar
 
 ## 更多信息
 
-* 请关注公众号: **architect-xnq**
+- 请关注公众号: **architect-xnq**
 
-![](https://www.jitao.tech/static/mp-qr.jpg)
+![architect-xnq](https://github.com/flmn/http-api-demo/raw/master/doc/img/mp-qr-code.jpg)
 
-* 或者添加私人微信: **pisystem**
+- 或者添加私人微信: **pisystem**
 
-![](https://www.jitao.tech/static//pisystem-qr.jpg)
+![pisystem](https://github.com/flmn/http-api-demo/raw/master/doc/img/pisystem-qr-code.jpg)
