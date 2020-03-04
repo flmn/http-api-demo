@@ -6,7 +6,7 @@ plugins {
 }
 
 group = 'tech.jitao'
-version = '1.0.1'
+version = '1.1.0'
 sourceCompatibility = '1.8'
 targetCompatibility = '1.8'
 
@@ -40,6 +40,7 @@ repositories {
 dependencies {
     implementation(
             'org.springframework.boot:spring-boot-starter-web',
+            'org.springframework.boot:spring-boot-starter-data-redis',
             "com.google.guava:guava:28.2-jre",
             "org.apache.commons:commons-lang3:3.9",
     )

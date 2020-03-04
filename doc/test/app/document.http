@@ -9,6 +9,7 @@ Content-Type: application/json
 
 POST http://localhost:8080/app/document/get-document
 Content-Type: application/json
+X-Access-Token: Yg28vPpZHXm4AEnQ
 
 {
   "id": "2"

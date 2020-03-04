@@ -2,6 +2,7 @@ package tech.jitao.httpapidemo.api.app.document;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,6 +12,7 @@ import tech.jitao.httpapidemo.common.request.IdRequest;
 import tech.jitao.httpapidemo.service.DocumentService;
 
 @RestController(GetDocument.PATH)
+@CrossOrigin
 public class GetDocument {
     static final String PATH = "/app/document/get-document";
 

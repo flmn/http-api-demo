@@ -23,6 +23,12 @@ build/libs/http-api-demo-0.0.1.jar
 
 用 Idea 打开 **http-api-demo.ipr** 工程文件。
 
+## !注意事项!
+
+1.1.0 版本增加了使用 redis 保存 session，请确保在 localhost 的 6379 端口运行着 redis，并且没密码。修改配置请参见 config/application.yml 配置文件。
+
+否则项目运行会出错。
+
 ## 更多信息
 
 - 请关注公众号: **architect-xnq**

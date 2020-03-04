@@ -7,6 +7,15 @@ spring:
   mvc:
     locale: zh_CN
 
+  redis:
+    host: localhost
+    port: 6379
+
+  data:
+    redis:
+      repositories:
+        enabled: false
+
 server:
   address: 127.0.0.1
   port: 8080

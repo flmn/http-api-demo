@@ -18,7 +18,7 @@ public class AccountRepository {
         user.setUsername(RandomStringUtils.randomAlphanumeric(8));
         user.setPassword(RandomStringUtils.randomAlphanumeric(32));
         user.setScreenName("唐伯虎");
-        user.setAvatar("static/avatar.jpg");
+        user.setAvatar("static/flutter-logo.png");
         user.setBirthday(LocalDate.now());
         user.setBalance(new BigDecimal("102.4"));
         user.setIsAdmin(0);
@@ -36,7 +36,7 @@ public class AccountRepository {
         user.setUsername(username);
         user.setPassword(password);
         user.setScreenName("唐伯虎");
-        user.setAvatar("static/avatar.jpg");
+        user.setAvatar("static/flutter-logo.png");
         user.setBirthday(LocalDate.now());
         user.setBalance(new BigDecimal("102.4"));
         user.setIsAdmin(0);
@@ -46,5 +46,9 @@ public class AccountRepository {
         user.setUpdateTime(LocalDateTime.now());
 
         return Optional.of(user);
+    }
+
+    public void save(User user) {
+        // noop
     }
 }
