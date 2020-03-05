@@ -1,9 +1,21 @@
 POST http://localhost:8080/web/document/list-documents
 Content-Type: application/json
+X-Access-Token: D8d8lKFtXdQ15Y5VoZm2UHQI8UZGGk17kArOFR7I
 
 {
   "currentPage": 1,
   "pageSize": 10
+}
+
+###
+
+POST http://localhost:8080/web/document/create-document
+Content-Type: application/json
+X-Access-Token: D8d8lKFtXdQ15Y5VoZm2UHQI8UZGGk17kArOFR7I
+
+{
+  "title": "title",
+  "content": "content"
 }
 
 ###

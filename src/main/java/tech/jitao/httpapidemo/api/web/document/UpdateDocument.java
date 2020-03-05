@@ -2,13 +2,11 @@ package tech.jitao.httpapidemo.api.web.document;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import tech.jitao.httpapidemo.common.ApiResult;
 import tech.jitao.httpapidemo.common.MessageException;
 import tech.jitao.httpapidemo.common.request.IdRequest;
+import tech.jitao.httpapidemo.config.RequestAttributes;
 import tech.jitao.httpapidemo.service.DocumentService;
 
 import javax.validation.constraints.NotBlank;
@@ -25,13 +23,15 @@ public class UpdateDocument {
     private DocumentService documentService;
 
     @PostMapping(PATH)
-    public ApiResult process(@Validated @RequestBody Request request) {
+    public ApiResult process(@Validated @RequestBody Request request,
+                             @RequestAttribute(RequestAttributes.USER_ID) long userId) {
         try {
             return ApiResult.okWithData(documentService.updateDocument(request.getId(),
                     request.getTitle(),
                     request.getContent(),
                     request.getPrice(),
-                    request.getStatus()));
+                    request.getStatus(),
+                    userId));
         } catch (MessageException e) {
             return ApiResult.error(e.getMessage());
         }

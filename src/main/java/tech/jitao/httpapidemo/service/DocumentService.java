@@ -70,8 +70,10 @@ public class DocumentService {
     public DocumentDto createDocument(String title,
                                       String content,
                                       BigDecimal price,
-                                      Integer status) throws MessageException {
+                                      Integer status,
+                                      long userId) throws MessageException {
         Document document = new Document();
+        document.setOwner(userId);
         document.setTitle(title);
         document.setContent(content);
         document.setPrice(price);
@@ -80,7 +82,7 @@ public class DocumentService {
 
         documentRepository.save(document);
 
-        logger.info("Document {} created.", document.getId());
+        logger.info("Document {} created by user {}.", document.getId(), userId);
 
         return toDto(document, true);
     }
@@ -89,7 +91,8 @@ public class DocumentService {
                                       String title,
                                       String content,
                                       BigDecimal price,
-                                      Integer status) throws MessageException {
+                                      Integer status,
+                                      long userId) throws MessageException {
         Document document = get(id);
         document.setTitle(title);
         document.setContent(content);
@@ -97,17 +100,18 @@ public class DocumentService {
         document.setStatus(status);
         document.setUpdateTime(LocalDateTime.now());
 
-        logger.info("Document {} updated.", id);
+        logger.info("Document {} updated by user {}.", id, userId);
 
         return toDto(document, true);
     }
 
-    public void deleteDocument(long id) throws MessageException {
+    public void deleteDocument(long id,
+                               long userId) throws MessageException {
         Document document = get(id);
 
         documentRepository.delete(document);
 
-        logger.info("Document {} deleted.", id);
+        logger.info("Document {} deleted by user {}.", id, userId);
     }
 
     private Document get(long id) throws MessageException {
