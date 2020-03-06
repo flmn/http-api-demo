@@ -2,6 +2,11 @@
 
 一个演示使用 Spring Boot 实现 HTTP API 的例子。PPT 在工程 doc 目录里。
 
+相关文章：
+
+- [分享开发多个线上项目后总结的 HTTP 接口设计方案](https://www.jitao.tech/blog/2020/01/java-http-api/)
+- [如何做 HTTP 接口的访问控制](https://www.jitao.tech/blog/2020/03/java-http-api-auth/)
+
 ## 运行方法
 
 运行如下命令，编译运行 demo。
