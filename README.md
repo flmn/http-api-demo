@@ -1,6 +1,6 @@
 # HTTP API Demo
 
-一个演示使用 Spring Boot 实现 HTTP API 的例子。PPT 在工程 doc 目录里。
+一个演示使用 Spring Boot 实现 HTTP API 的例子。1.0 版 PPT 在工程 doc 目录里。持续更新的在线版地址：[HTTP 接口设计](https://www.jitao.tech/http-api-book/)
 
 相关文章：
 
