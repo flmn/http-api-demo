@@ -13,6 +13,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import tech.jitao.httpapidemo.config.auth.AuthInterceptor;
+import tech.jitao.httpapidemo.config.logging.LoggingInterceptor;
 
 import java.math.BigDecimal;
 
@@ -21,7 +22,13 @@ public class TheWebMvcConfigurer implements WebMvcConfigurer {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(loggingInterceptor());
         registry.addInterceptor(authInterceptor());
+    }
+
+    @Bean
+    public LoggingInterceptor loggingInterceptor() {
+        return new LoggingInterceptor();
     }
 
     @Bean

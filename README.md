@@ -6,6 +6,7 @@
 
 - [分享开发多个线上项目后总结的 HTTP 接口设计方案](https://www.jitao.tech/blog/2020/01/java-http-api/)
 - [如何做 HTTP 接口的访问控制](https://www.jitao.tech/blog/2020/03/java-http-api-auth/)
+- [为 HTTP API 接口增加统一请求日志](https://www.jitao.tech/blog/2020/03/java-http-api-logging/)
 
 ## 运行方法
 
@@ -15,7 +16,7 @@
 git clone https://github.com/flmn/http-api-demo.git
 cd http-api-demo
 ./gradlew build
-build/libs/http-api-demo-0.0.1.jar
+build/libs/http-api-demo-1.2.0.jar
 ```
 
 ## 开发说明

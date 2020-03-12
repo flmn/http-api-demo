@@ -4,12 +4,12 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 @Component
-@Profile({"test", "default", "dev"})
-public class TestProfileConfig implements ProfileConfig {
+@Profile({"default", "dev"})
+public class DevProfileConfig implements ProfileConfig {
 
     @Override
     public int getEnv() {
-        return ENV_TEST;
+        return ENV_DEV;
     }
 
     @Override

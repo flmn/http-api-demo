@@ -100,7 +100,7 @@ public class AccountService {
     }
 
     private String genToken() {
-        return profileConfig.getEnv() == ProfileConfig.ENV_TEST
+        return profileConfig.getEnv() == ProfileConfig.ENV_DEV
                 ? TEST_TOKEN
                 : RandomStringUtils.randomAlphanumeric(8) + UuidHelper.gen() + RandomStringUtils.randomAlphanumeric(8);
     }

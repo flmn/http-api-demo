@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import tech.jitao.httpapidemo.common.ApiResult;
 import tech.jitao.httpapidemo.common.MessageException;
 import tech.jitao.httpapidemo.config.auth.NoAuth;
+import tech.jitao.httpapidemo.config.logging.NoLogging;
 import tech.jitao.httpapidemo.service.AccountService;
 
 import javax.validation.constraints.NotBlank;
@@ -17,6 +18,7 @@ import javax.validation.constraints.Size;
 @RestController(Login.PATH)
 @CrossOrigin
 @NoAuth
+@NoLogging(omitResponse = false)
 public class Login {
     static final String PATH = "/app/account/login";
 
