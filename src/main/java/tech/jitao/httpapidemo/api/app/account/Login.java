@@ -28,7 +28,7 @@ public class Login {
     @PostMapping(PATH)
     public ApiResult process(@Validated @RequestBody Request request) {
         try {
-            return ApiResult.okWithData(accountService.login(request.getUsername(), request.getPassword()));
+            return ApiResult.ok(accountService.login(request.getUsername(), request.getPassword()));
         } catch (MessageException e) {
             return ApiResult.error(e.getMessage());
         }

@@ -1,73 +1,72 @@
 package tech.jitao.httpapidemo.common;
 
-import com.google.common.base.MoreObjects;
+import java.util.Map;
 
 public class ApiResult {
     private static final String CODE_ERROR_WITH_MESSAGE = "ERROR_WITH_MESSAGE";
     private static final ApiResult OK = new ApiResult();
 
     private String code = "OK";
-    private String message;
+    private String msg;
     private Object data;
+    private Map<String, String> errors;
 
     private ApiResult() {
     }
 
-    private ApiResult(String code, String message, Object data) {
+    private ApiResult(String code, String msg, Object data, Map<String, String> errors) {
         this.code = code;
-        this.message = message;
+        this.msg = msg;
         this.data = data;
+        this.errors = errors;
     }
 
     public static ApiResult ok() {
         return OK;
     }
 
-    public static ApiResult okWithMessage(String message) {
-        ApiResult result = new ApiResult();
-        result.setMessage(message);
-
-        return result;
-    }
-
-    public static ApiResult okWithData(Object data) {
+    public static ApiResult ok(Object data) {
         ApiResult result = new ApiResult();
         result.setData(data);
 
         return result;
     }
-    public static ApiResult ok(Object data){
-        return okWithData(data);
+
+    public static ApiResult okWithMsg(String msg) {
+        ApiResult result = new ApiResult();
+        result.setMsg(msg);
+
+        return result;
     }
 
-
-    public static ApiResult okWithMessageAndData(String message, Object data) {
+    public static ApiResult okWithMsgAndData(String msg, Object data) {
         ApiResult result = new ApiResult();
-        result.setMessage(message);
+        result.setMsg(msg);
         result.setData(data);
 
         return result;
     }
 
-    public static ApiResult error(String message) {
-        return new ApiResult(CODE_ERROR_WITH_MESSAGE, message, null);
+    public static ApiResult error(String msg) {
+        return new ApiResult(CODE_ERROR_WITH_MESSAGE, msg, null, null);
     }
 
-    public static ApiResult error(String code, String message) {
-        return new ApiResult(code, message, null);
+    public static ApiResult error(String code, String msg) {
+        return new ApiResult(code, msg, null, null);
     }
 
-    public static ApiResult error(String code, String message, Object data) {
-        return new ApiResult(code, message, data);
+    public static ApiResult error(String code, String msg, Map<String, String> errors) {
+        return new ApiResult(code, msg, null, errors);
     }
 
     @Override
     public String toString() {
-        return MoreObjects.toStringHelper(this)
-                .add("code", code)
-                .add("message", message)
-                .add("data", data)
-                .toString();
+        return "ApiResult{" +
+                "code='" + code + '\'' +
+                ", msg='" + msg + '\'' +
+                ", data=" + data +
+                ", errors=" + errors +
+                '}';
     }
 
     public String getCode() {
@@ -78,12 +77,12 @@ public class ApiResult {
         this.code = code;
     }
 
-    public String getMessage() {
-        return message;
+    public String getMsg() {
+        return msg;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setMsg(String msg) {
+        this.msg = msg;
     }
 
     public Object getData() {
@@ -92,5 +91,13 @@ public class ApiResult {
 
     public void setData(Object data) {
         this.data = data;
+    }
+
+    public Map<String, String> getErrors() {
+        return errors;
+    }
+
+    public void setErrors(Map<String, String> errors) {
+        this.errors = errors;
     }
 }

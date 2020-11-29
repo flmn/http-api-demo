@@ -1,12 +1,12 @@
 plugins {
-    id 'org.springframework.boot' version '2.2.5.RELEASE'
-    id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+    id 'org.springframework.boot' version '2.4.0'
+    id 'io.spring.dependency-management' version '1.0.10.RELEASE'
     id 'java'
     id 'idea'
 }
 
 group = 'tech.jitao'
-version = '1.2.0'
+version = '1.3.0'
 sourceCompatibility = '1.8'
 targetCompatibility = '1.8'
 
@@ -22,7 +22,7 @@ idea.project {
 }
 
 wrapper {
-    gradleVersion = '6.2.2'
+    gradleVersion = '6.7.1'
 }
 
 springBoot {
@@ -40,8 +40,9 @@ repositories {
 dependencies {
     implementation(
             'org.springframework.boot:spring-boot-starter-web',
+            'org.springframework.boot:spring-boot-starter-validation',
             'org.springframework.boot:spring-boot-starter-data-redis',
-            "com.google.guava:guava:28.2-jre",
-            "org.apache.commons:commons-lang3:3.9",
+            "org.apache.commons:commons-lang3",
+            "com.google.guava:guava:30.0-jre",
     )
 }

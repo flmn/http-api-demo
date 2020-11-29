@@ -22,7 +22,7 @@ public class ListDocuments {
     @PostMapping(PATH)
     public ApiResult process(@Validated @RequestBody PageRequest request) {
         try {
-            return ApiResult.okWithData(documentService.listDocuments(request.getCurrentPage(), request.getPageSize()));
+            return ApiResult.ok(documentService.listDocuments(request.getCurrentPage(), request.getPageSize()));
         } catch (MessageException e) {
             return ApiResult.error(e.getMessage());
         }

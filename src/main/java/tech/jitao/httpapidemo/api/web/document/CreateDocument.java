@@ -25,7 +25,7 @@ public class CreateDocument {
     public ApiResult process(@Validated @RequestBody Request request,
                              @RequestAttribute(RequestAttributes.USER_ID) long userId) {
         try {
-            return ApiResult.okWithData(documentService.createDocument(request.getTitle(),
+            return ApiResult.ok(documentService.createDocument(request.getTitle(),
                     request.getContent(),
                     request.getPrice(),
                     request.getStatus(),

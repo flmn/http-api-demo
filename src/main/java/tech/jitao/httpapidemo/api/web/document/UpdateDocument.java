@@ -26,7 +26,7 @@ public class UpdateDocument {
     public ApiResult process(@Validated @RequestBody Request request,
                              @RequestAttribute(RequestAttributes.USER_ID) long userId) {
         try {
-            return ApiResult.okWithData(documentService.updateDocument(request.getId(),
+            return ApiResult.ok(documentService.updateDocument(request.getId(),
                     request.getTitle(),
                     request.getContent(),
                     request.getPrice(),

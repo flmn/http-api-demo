@@ -22,7 +22,7 @@ public class ListDocuments {
     @PostMapping(PATH)
     public ApiResult process(@Validated @RequestBody LoadMoreRequest request) {
         try {
-            return ApiResult.okWithData(documentService.listDocuments(request.getNextPageToken()));
+            return ApiResult.ok(documentService.listDocuments(request.getNextPageToken()));
         } catch (MessageException e) {
             return ApiResult.error(e.getMessage());
         }

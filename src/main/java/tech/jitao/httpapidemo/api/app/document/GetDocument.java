@@ -22,7 +22,7 @@ public class GetDocument {
     @PostMapping(PATH)
     public ApiResult process(@Validated @RequestBody IdRequest request) {
         try {
-            return ApiResult.okWithData(documentService.getDocument(request.getId()));
+            return ApiResult.ok(documentService.getDocument(request.getId()));
         } catch (MessageException e) {
             return ApiResult.error(e.getMessage());
         }
